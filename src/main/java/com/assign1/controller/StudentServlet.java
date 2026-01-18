@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-import com.assign1.dao.StudentDao;
+import com.assign1.dao.RegistrationFormDAO;
 import com.assign1.model.Student;
 
 /**
@@ -18,10 +18,10 @@ public class StudentServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 
-	private StudentDao stDao;
+	private RegistrationFormDAO stDao;
 
 	public void init() {
-		stDao = new StudentDao();
+		stDao = new RegistrationFormDAO();
 	}
 
 	/**

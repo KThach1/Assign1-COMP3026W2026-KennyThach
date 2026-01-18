@@ -9,7 +9,7 @@
 <body>
 
 	<div align="center">
-		<h1>Student Register Page</h1>
+		<h1>User Registration Form</h1>
 
 		<!-- form action ="StudentServlet" method="post"> -->
 <form action="<%=request.getContextPath()%>/StudentServlet" method="post">
