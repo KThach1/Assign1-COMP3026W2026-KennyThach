@@ -94,7 +94,7 @@ public class RegFormServlet extends HttpServlet {
 //			e.printStackTrace();
 //		}
 		// Redirect user to desired page after hitting submit on properly filled form
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("RegistrationSuccess.jsp");
 	}
 
 }
