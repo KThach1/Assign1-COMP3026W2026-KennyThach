@@ -34,11 +34,21 @@ public class RegFormServlet extends HttpServlet {
 //		String firstname = request.getParameter("firstName");
 //		String lastname = request.getParameter("lastName");
 //		String grade = request.getParameter("grade");
-
+		
+//		Name attribute on the form has to match the getParameter
+		String userName = request.getParameter("userName");
+//		String lastname = request.getParameter("lastName");
+//		String grade = request.getParameter("grade");
+		
+		
 		RegistrationForm form = new RegistrationForm();
+		form.setUserName(userName);
 //		st.setFirstname(firstname);
 //		st.setLastname(lastname);
 //		st.setGrade(grade);
+		
+		// testing stuff
+		System.out.println(form.getUserName());
 		
 
 		try {
