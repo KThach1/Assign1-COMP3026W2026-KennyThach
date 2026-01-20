@@ -40,9 +40,12 @@ public class RegFormServlet extends HttpServlet {
 		String country = request.getParameter("country");
 		String zipCode = request.getParameter("zipCode");
 		String email = request.getParameter("email");
+		String sex = request.getParameter("sex");
+		String language = request.getParameter("language");
+		String about = request.getParameter("about");
 		
 		
-		// Create
+		// Create form instance
 		RegistrationForm form = new RegistrationForm();
 		form.setUserName(userName);
 		form.setPassword(password);
@@ -51,6 +54,26 @@ public class RegFormServlet extends HttpServlet {
 		form.setCountry(country);
 		form.setPostalCode(zipCode);
 		form.setEmail(email);
+		// convert the sex to an int
+		if (sex.equals("Male"))
+		{
+			form.setSex(0); // using 0 for male and 1 for female to save memory
+		}
+		if (sex.equals("Female"))
+		{
+			form.setSex(1);
+		}
+		// convert the language to an int
+		if (language.equals("english"))
+		{
+			form.setLanguage(0); // using 0 for English and 1 for French
+		}
+		if (language.equals("french"))
+		{
+			form.setLanguage(1);
+		}
+		form.setAbout(about);
+		
 		
 		// testing stuff
 		System.out.println(form.getUserName());
@@ -60,7 +83,9 @@ public class RegFormServlet extends HttpServlet {
 		System.out.println(form.getCountry());
 		System.out.println(form.getPostalCode());
 		System.out.println(form.getEmail());
-//		System.out.println(form.getPostalCode());
+		System.out.println(form.getSex());
+		System.out.println(form.getLanguage());
+		System.out.println(form.getAbout());
 		
 
 //		try {
