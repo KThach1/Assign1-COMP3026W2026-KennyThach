@@ -21,7 +21,7 @@ public class RegFormServlet extends HttpServlet {
 //	private RegistrationFormDAO stDao;
 
 	public void init() {
-		stDao = new RegistrationFormDAO();
+//		stDao = new RegistrationFormDAO();
 	}
 
 	/**
