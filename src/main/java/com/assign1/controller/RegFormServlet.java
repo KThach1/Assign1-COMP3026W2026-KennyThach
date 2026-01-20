@@ -8,17 +8,17 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import com.assign1.dao.RegistrationFormDAO;
-import com.assign1.model.Student;
+import com.assign1.model.RegistrationForm;
 
 /**
  * Servlet implementation class StudentServlet
  */
-@WebServlet("/StudentServlet")
-public class StudentServlet extends HttpServlet {
+@WebServlet("/RegFormServlet")
+public class RegFormServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 
-	private RegistrationFormDAO stDao;
+//	private RegistrationFormDAO stDao;
 
 	public void init() {
 		stDao = new RegistrationFormDAO();
@@ -31,22 +31,22 @@ public class StudentServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String firstname = request.getParameter("firstName");
-		String lastname = request.getParameter("lastName");
-		String grade = request.getParameter("grade");
+//		String firstname = request.getParameter("firstName");
+//		String lastname = request.getParameter("lastName");
+//		String grade = request.getParameter("grade");
 
-		Student st = new Student();
-		st.setFirstname(firstname);
-		st.setLastname(lastname);
-		st.setGrade(grade);
+		RegistrationForm form = new RegistrationForm();
+//		st.setFirstname(firstname);
+//		st.setLastname(lastname);
+//		st.setGrade(grade);
 		
 
 		try {
-			stDao.registerStudent(st);
+//			stDao.registerStudent(st);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		response.sendRedirect("StudentInfo.jsp");
+		response.sendRedirect("index.jsp");
 	}
 
 }

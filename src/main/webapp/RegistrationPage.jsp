@@ -8,23 +8,23 @@
 </head>
 <body>
 
-	<div align="center">
+	<div align="left">
 		<h1>User Registration Form</h1>
 
-		<!-- form action ="StudentServlet" method="post"> -->
-<form action="<%=request.getContextPath()%>/StudentServlet" method="post">
+		<!-- form action ="RegFormServlet" method="post"> -->
+<form action="<%=request.getContextPath()%>/RegFormServlet" method="post">
 			<table style="width: 80%">
 				<tr>
-					<td>First Name</td>
-					<td><input type="text" name="firstName" required /></td>
+					<td>Username</td>
+					<td><input type="text" name="userName" required /></td>
 				</tr>
 				<tr>
-					<td>Last Name</td>
-					<td><input type="text" name="lastName" /></td>
+					<td>Password</td>
+					<td><input type="password" name="lastName" required/></td>
 				</tr>
 				<tr>
-					<td>UserName</td>
-					<td><input type="text" name="grade" /></td>
+					<td>Full Name</td>
+					<td><input type="text" name="fullName" /></td>
 				</tr>
 			</table>
 			<input type="submit" value="Submit" />
