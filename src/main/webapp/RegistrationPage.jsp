@@ -8,31 +8,31 @@
 </head>
 <body>
 
-	<div align="left">
+	<div align="center">
 		<h1>User Registration Form</h1>
 
 		<!-- form action ="RegFormServlet" method="post"> -->
 <form action="<%=request.getContextPath()%>/RegFormServlet" method="post">
 			<table style="width: 80%">
 				<tr>
-					<td>Username</td>
+					<td><label for="userName">Username</label></td>
 					<!-- Pattern is from 5 to 12 characters long and only letters (upper or lower case) and numbers -->
-					<td><input type="text" name="userName" pattern="[A-Za-z0-9]{5,12}" required /></td>
+					<td><input id="userName" type="text" name="userName" pattern="[A-Za-z0-9]{5,12}" required /></td>
 				</tr>
 				<tr>
-					<td>Password</td>
+					<td><label for="password">Password</label></td>
 					<!-- Pattern is any characters (the period means any character) but min 7 characters and max 12 -->
-					<td><input type="password" name="password" pattern=".{7,12}"required/></td>
+					<td><input id="password" type="password" name="password" pattern=".{7,12}"required/></td>
 				</tr>
 				<tr>
-					<td>Full Name</td>
+					<td><label for="fullName">Full Name</label></td>
 					<!-- Pattern should be letters only (* means zero or more but + means at least one character)-->
 					<!-- Pattern from the internet for optional middle name which would require two spaces -->
-					<td><input type="text" name="fullName" pattern="[A-Za-z]+( [A-Za-z]+){1,2}" required/></td>
+					<td><input id="fullName" type="text" name="fullName" pattern="[A-Za-z]+( [A-Za-z]+){1,2}" required/></td>
 				</tr>
 				<tr>
-					<td>Address</td>
-					<td><input type="text" name="address" /></td>
+					<td><label for="address">Address</label></td>
+					<td><input id="address" type="text" name="address" /></td>
 				</tr>
 				<tr>
 					<td><label for="country">Country:</label></td>
@@ -51,16 +51,16 @@
 					</select></td>
 				</tr>
 				<tr>
-					<td>ZIP Code</td>
+					<td><label for="zipCode">ZIP Code</label></td>
 					<!-- This is going to cause an issue with Canadian postalcodes which include letters -->
-					<td><input type="text" name="zipCode" pattern="[0-9]{5,9}" required/></td>
+					<td><input id="zipCode" type="text" name="zipCode" pattern="[0-9]{5,9}" required/></td>
 				</tr>
 				<tr>
-					<td>Email</td>
-					<td><input type="email" name="email" required/></td>
+					<td><label for="email">Email</label></td>
+					<td><input id="email" type="email" name="email" required/></td>
 				</tr>
 				<tr>
-				  <td><label>Sex:</label></td>
+				  <td><label for="male">Sex:</label></td>
 				  <td>
 				  	<!-- Making one required makes the whole group required -->
 				    <input type="radio" id="male" name="sex" value="Male" required>
@@ -69,6 +69,22 @@
 				    <label for="female">Female</label>
 				  </td>
 				</tr>
+				<!-- Wasn't able to get "required to work on checkbox group for language so it was changed to radiobutton -->
+				<tr>
+				  <td><label>Language:</label></td>
+				  <td>
+				  	<!-- Making one required makes the whole group required -->
+				    <input type="radio" id="english" name="language" value="english" required>
+				    <label for="english">English</label>			
+				    <input type="radio" id="french" name="language" value="french">
+				    <label for="frenchh">French</label>
+				  </td>
+				</tr>
+				<tr>
+					<td><label for="about">About:</label></td>
+					<td><textarea id="about" name="about" rows="10" cols="50"></textarea></td>
+				</tr>
+				
 			</table>
 			<input type="submit" value="Submit" />
 		</form>
