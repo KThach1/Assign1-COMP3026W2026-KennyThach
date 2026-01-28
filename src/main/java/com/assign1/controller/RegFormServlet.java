@@ -18,10 +18,11 @@ public class RegFormServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 
-//	private RegistrationFormDAO stDao;
+	// create a RegistrationFormDAO object (not RegistrationForm object)
+	private RegistrationFormDAO formDao;
 
 	public void init() {
-//		stDao = new RegistrationFormDAO();
+		formDao = new RegistrationFormDAO();
 	}
 
 	/**
@@ -87,12 +88,12 @@ public class RegFormServlet extends HttpServlet {
 		System.out.println(form.getLanguage());
 		System.out.println(form.getAbout());
 		
-
-//		try {
-////			stDao.registerStudent(st);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
+		// This is the part where we use the Dao object and send the statement to MySQL server via prepared statement
+		try {
+			formDao.registerUser(form);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		// Redirect user to desired page after hitting submit on properly filled form
 		response.sendRedirect("RegistrationSuccess.jsp");
 	}
