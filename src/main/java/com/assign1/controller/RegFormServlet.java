@@ -11,7 +11,7 @@ import com.assign1.dao.RegistrationFormDAO;
 import com.assign1.model.RegistrationForm;
 
 /**
- * Servlet implementation class StudentServlet
+ * Servlet implementation class StudentServlet (in this case it'll be the RegistrationForm)
  */
 @WebServlet("/RegFormServlet")
 public class RegFormServlet extends HttpServlet {
